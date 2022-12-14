@@ -5,7 +5,7 @@ function UserItem(props) {
 
     return (
         <div>
-            <p>{props.props.id}</p>
+            {/*<p>{props.props.id}</p>*/}
             <p>{props.props.name}</p>
             <p>{props.props.tel}</p>
         </div>

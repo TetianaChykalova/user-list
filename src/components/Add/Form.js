@@ -21,12 +21,26 @@ function Form(props) {
         <form>
             <div>
                 <label htmlFor="user-name">User Name</label>
-                <input ref={nameRef} type="text" id="user-name" value={dataItem.name} onChange={nameChanged} />
+                <input
+                    ref={nameRef}
+                    type="text"
+                    id="user-name"
+                    value={dataItem.name}
+                    required={true}
+                    onChange={nameChanged}
+                />
             </div>
 
             <div>
                 <label htmlFor="user-tel">User Tel</label>
-                <input ref={telRef} type="tel" id="user-tel" value={dataItem.tel} onChange={telChanged} />
+                <input
+                    ref={telRef}
+                    type="tel"
+                    id="user-tel"
+                    value={dataItem.tel}
+                    required={true}
+                    onChange={telChanged}
+                />
             </div>
 
         </form>

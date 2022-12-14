@@ -30,8 +30,8 @@ let store = {
         }
 
         this.state.usersCount.push(newUser)
-        this.state.userData.name = 'Your name'
-        this.state.userData.tel = '+380999999999'
+        this.state.userData.name = ''
+        this.state.userData.tel = ''
         this.callSubscriber(this.state)
         console.log(this.state.usersCount)
     },

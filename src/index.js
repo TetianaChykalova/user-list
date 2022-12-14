@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import store from "./bll/state";
+import {data} from "./service/data.service";
 
 // import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
@@ -26,7 +27,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 let rerenderEntireTree = (state) => {
     root.render(
         <React.StrictMode>
-            <App store={store}/>
+            <App store={store} data={data}/>
         </React.StrictMode>
     );
 }
