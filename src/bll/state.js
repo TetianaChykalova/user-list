@@ -3,17 +3,27 @@ let store = {
         usersCount: [],
 
         userData: {
-            name: '',
+            firstName: '',
+            lastName: '',
             tel: '',
+            email: '',
         },
     },
 
-    updateUserName(name) {
-        this.state.userData.name = name
+    updateUserFirstName(firstName) {
+        this.state.userData.firstName = firstName
+        this.callSubscriber(this.state)
+    },
+    updateUserLastName(lastName) {
+        this.state.userData.lastName = lastName
         this.callSubscriber(this.state)
     },
     updateUserTel(tel) {
         this.state.userData.tel = tel
+        this.callSubscriber(this.state)
+    },
+    updateUserEmail(email) {
+        this.state.userData.email = email
         this.callSubscriber(this.state)
     },
 
@@ -25,8 +35,10 @@ let store = {
     addUser(id) {
         let newUser = {
             id: id,
-            name: this.state.userData.name,
-            tel: this.state.userData.tel
+            firstName: this.state.userData.firstName,
+            lastName: this.state.userData.lastName,
+            tel: this.state.userData.tel,
+            email: this.state.userData.email,
         }
 
         this.state.usersCount.push(newUser)

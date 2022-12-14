@@ -5,9 +5,9 @@ function UserItem(props) {
 
     return (
         <div>
-            {/*<p>{props.props.id}</p>*/}
-            <p>{props.props.name}</p>
-            <p>{props.props.tel}</p>
+            <p>Full name: {props.props.firstName} {props.props.lastName}</p>
+            <p>Tel: {props.props.tel}</p>
+            <p>Email: {props.props.email}</p>
         </div>
     );
 }

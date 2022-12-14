@@ -3,7 +3,7 @@ import UserItem from "./UserItem";
 
 function UsersList(props) {
     let item = props.count
-    // console.log(item)
+    console.log(item)
 
     let addNewUserItem = item.map( (user) =>  <UserItem props={user} key={user.id}/> )
 

@@ -1,6 +1,10 @@
 import React from 'react';
 import {useState} from "react";
 import uuid from 'react-uuid';
+import InputFirstName from "./FormInputs/InputFirstName";
+import InputTel from "./FormInputs/InputTel";
+import InputEmail from "./FormInputs/InputEmail";
+import InputLastName from "./FormInputs/InputLastName";
 
 function Add(props) {
     // console.log(props)
@@ -8,29 +12,12 @@ function Add(props) {
     let count = props.users.state.usersCount
     const [users, setUsers] = useState(1)
 
-    let dataItem = props.users.state.userData
 
-    let nameRef = React.createRef()
-    let telRef = React.createRef()
     // console.log(document.querySelector('#user-name'))
 
-    let nameInput = document.querySelector('#user-name')
-    let telInput = document.querySelector('#user-tel')
+    // let nameInput = document.querySelector('#user-name') -> for blur
+    // let telInput = document.querySelector('#user-tel')   -> for blur
 
-    let nameChanged = () => {
-        let name = nameRef.current.value
-        props.users.updateUserName(name)
-        nameInput.blur()
-    }
-
-    let telChanged = () => {
-        let tel = telRef.current.value
-        props.users.updateUserTel(tel)
-        telInput.blur()
-    }
-
-    // console.log(count)
-    // console.log(users)
 
     async function addNewUser() {
         setUsers(prev => prev + 1)
@@ -42,29 +29,12 @@ function Add(props) {
     return (
         <div>
             <form>
-                <div className='input'>
-                    <label htmlFor="user-name">User Name</label>
-                    <input
-                        ref={nameRef}
-                        type="text"
-                        id="user-name"
-                        value={dataItem.name}
-                        required
-                        onChange={nameChanged}
-                    />
-                </div>
-
                 <div>
-                    <label htmlFor="user-tel">User Tel</label>
-                    <input
-                        ref={telRef}
-                        type="tel"
-                        id="user-tel"
-                        value={dataItem.tel}
-                        required
-                        onChange={telChanged}
-                    />
+                    <InputFirstName props={props.users} />
+                    <InputLastName props={props.users} />
                 </div>
+                <InputTel props={props.users} />
+                <InputEmail props={props.users} />
 
                 <button type='submit' onClick={addNewUser}>Add new user</button>
             </form>
