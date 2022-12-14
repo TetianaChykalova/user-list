@@ -1,5 +1,6 @@
 import React from 'react';
 import {useState} from "react";
+import uuid from 'react-uuid';
 
 function Add(props) {
     // console.log(props)
@@ -33,7 +34,7 @@ function Add(props) {
 
     async function addNewUser() {
         setUsers(prev => prev + 1)
-        props.users.addUser(users)
+        props.users.addUser(uuid())
 
         await props.data.registerUserToFirebase(props.users.state.usersCount[props.users.state.usersCount.length - 1])
     }
