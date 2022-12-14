@@ -1,8 +1,11 @@
 import React from 'react';
 import {useState} from "react";
+import Form from "./Form";
 
 function Add(props) {
-    let count = props.users.usersCount
+    // console.log(props.users.addUser)
+
+    let count = props.users.state.usersCount
     const [users, setUsers] = useState(1)
 
     // console.log(count)
@@ -10,11 +13,13 @@ function Add(props) {
 
     function addNewUser() {
         setUsers(prev => prev + 1)
-        props.users.changeUserCount(users)
+        // props.users.changeUserCount(users)
+        props.users.addUser(users)
     }
 
     return (
         <div>
+            <Form data={props}/>
             <button onClick={addNewUser}>Add new user</button>
         </div>
     );

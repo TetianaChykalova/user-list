@@ -1,13 +1,16 @@
 import React from 'react';
+import UserItem from "./UserItem";
 
 function UsersList(props) {
+    let item = props.count
+    // console.log(item)
+
+    let addNewUserItem = item.map( (user) =>  <UserItem props={user}/> )
+
+
     return (
         <div>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
+            {addNewUserItem}
         </div>
     );
 }
