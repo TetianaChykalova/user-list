@@ -1,7 +1,7 @@
 import React from 'react';
 
 function InputFirstName(props) {
-    // console.log(props)
+    // console.log(props.error)
 
     let firstNameRef = React.createRef()
     let dataItem = props.props.state.userData
@@ -20,11 +20,13 @@ function InputFirstName(props) {
                     type="text"
                     id="user-first-name"
                     value={dataItem.firstName}
-                    required
                     onChange={nameChanged}
                 />
+                {props.error&&dataItem.firstName.length==0 ? <p>This input can't be empty!</p> : ""}
             </div>
     );
 }
 
 export default InputFirstName;
+
+// &&dataItem.firstName.length==0

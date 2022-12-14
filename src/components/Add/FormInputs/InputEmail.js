@@ -18,9 +18,9 @@ function InputEmail(props) {
                 type="email"
                 id="user-tel"
                 value={dataItem.email}
-                required
                 onChange={emailChanged}
             />
+            {/*{props.error&&dataItem.email.length==0?<p>Check</p>:""}*/}
         </div>
     );
 }

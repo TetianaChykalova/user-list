@@ -32,9 +32,10 @@ let store = {
         this.callSubscriber(this.state)
     },
 
-    addUser(id) {
+    addUser(id, number) {
         let newUser = {
             id: id,
+            number: number,
             firstName: this.state.userData.firstName,
             lastName: this.state.userData.lastName,
             tel: this.state.userData.tel,
@@ -42,8 +43,10 @@ let store = {
         }
 
         this.state.usersCount.push(newUser)
-        this.state.userData.name = ''
+        this.state.userData.firstName = ''
+        this.state.userData.lastName = ''
         this.state.userData.tel = ''
+        this.state.userData.email = ''
         this.callSubscriber(this.state)
         console.log(this.state.usersCount)
     },

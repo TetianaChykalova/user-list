@@ -11,32 +11,52 @@ function Add(props) {
 
     let count = props.users.state.usersCount
     const [users, setUsers] = useState(1)
+    const [error, setError] = useState(false)
 
 
-    // console.log(document.querySelector('#user-name'))
+    const firstNameValue = props.users.state.userData.firstName
+    const lastNameValue = props.users.state.userData.lastName
+    const telValue = props.users.state.userData.tel
+    const emailValue = props.users.state.userData.email
 
-    // let nameInput = document.querySelector('#user-name') -> for blur
-    // let telInput = document.querySelector('#user-tel')   -> for blur
+    const emailRGEX = /[ AZ0-9._%+-] + @ [ AZ0 -9.-] + \. [ AZ] {2,}/
+    const telRGEX = /^[\s()+-]*([0-9][\s()+-]*){10,20}$/
+
+    // ||!emailValue.test(emailRGEX)||!telValue.test(telRGEX)
+
+    let validateForm = (e) => {
+        e.preventDefault()
+        if(firstNameValue.length==0||lastNameValue.length==0) {
+            // setError((prev) => !prev)
+            setError(true)
+        } else {
+            setError(false)
+        }
+    }
 
 
     async function addNewUser() {
-        setUsers(prev => prev + 1)
-        props.users.addUser(uuid())
+            setUsers(prev => prev + 1)
+            props.users.addUser(uuid(), users)
+            setError(false)
 
-        await props.data.registerUserToFirebase(props.users.state.usersCount[props.users.state.usersCount.length - 1])
+            await props.data.registerUserToFirebase(props.users.state.usersCount[props.users.state.usersCount.length - 1])
     }
+
+    console.log(error)
 
     return (
         <div>
-            <form>
+            <form onSubmit={validateForm}>
                 <div>
-                    <InputFirstName props={props.users} />
-                    <InputLastName props={props.users} />
+                    <InputFirstName props={props.users} error={error} />
+                    <InputLastName props={props.users} error={error} />
                 </div>
-                <InputTel props={props.users} />
-                <InputEmail props={props.users} />
+                <InputTel props={props.users} error={error} />
+                <InputEmail props={props.users} error={error} />
 
                 <button type='submit' onClick={addNewUser}>Add new user</button>
+                {/*<button>Sumbit</button>*/}
             </form>
         </div>
     );

@@ -18,9 +18,9 @@ function InputTel(props) {
                 type="tel"
                 id="user-tel"
                 value={dataItem.tel}
-                required
                 onChange={telChanged}
             />
+            {/*{props.error&&dataItem.tel.length==0?<p>Check</p>:""}*/}
         </div>
     );
 }
