@@ -20,7 +20,7 @@ function InputEmail(props) {
                 value={dataItem.email}
                 onChange={emailChanged}
             />
-            {/*{props.error&&dataItem.email.length==0?<p>Check</p>:""}*/}
+            {props.error&&dataItem.email.length==0?<p>This input can't be empty!</p>:""}
         </div>
     );
 }
