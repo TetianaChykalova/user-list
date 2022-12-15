@@ -1,6 +1,7 @@
 import React from 'react';
 
 function InputTel(props) {
+    // console.log(props)
 
     let telRef = React.createRef()
     let dataItem = props.props.state.userData
@@ -21,6 +22,7 @@ function InputTel(props) {
                 onChange={telChanged}
             />
             {props.error&&dataItem.tel.length==0?<p>This input can't be empty!</p>:""}
+            {props.error&&dataItem.tel.length>0&&!props.telResult?<p>Tel is invalid</p>:""}
         </div>
     );
 }

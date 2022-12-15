@@ -1,6 +1,7 @@
 import React from 'react';
 
 function InputEmail(props) {
+    // console.log(props)
 
     let emailRef = React.createRef()
     let dataItem = props.props.state.userData
@@ -21,6 +22,7 @@ function InputEmail(props) {
                 onChange={emailChanged}
             />
             {props.error&&dataItem.email.length==0?<p>This input can't be empty!</p>:""}
+            {props.error&&dataItem.email.length>0&&!props.emailResult?<p>Email is invalid</p>:""}
         </div>
     );
 }

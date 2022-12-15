@@ -9,6 +9,7 @@ function UserItem(props) {
             <p>Full name: {props.props.firstName} {props.props.lastName}</p>
             <p>Tel: {props.props.tel}</p>
             <p>Email: {props.props.email}</p>
+            <p>Birth day: {props.props.birthDay}</p>
         </div>
     );
 }
