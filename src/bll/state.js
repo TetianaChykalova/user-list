@@ -7,7 +7,7 @@ let store = {
             lastName: '',
             tel: '',
             email: '',
-            birthDay: '',
+            birthDay: null,
         },
     },
 

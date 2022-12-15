@@ -12,9 +12,12 @@ function InputDate(props) {
 
     return (
         <div>
+            <p>
+                Your birthday:
+            </p>
             <InputMask
                 mask='99.99.9999'
-                maskChair='_'
+                maskchair='_'
                 ref={dateRef}
                 onChange={dateChange}
             />

@@ -6,3 +6,68 @@
     //                  /^\+380\d{3}\d{2}\d{2}\d{2}$/       /^[\+]?3?[\s]?8?[\s]?\(?0\d{2}?\)?[\s]?\d{3}[\s|-]?\d{2}[\s|-]?\d{2}$/
     //                  /^(\+38|8)?0[0-9]{9}$/              /^(\+38)?0(39|50|63|66|67|68|73|89|9[1-9])[0-9]{7}$/
     //                  маскированній ввод
+
+
+
+    // const [url, setUrl] = useState(null)
+    //
+    // const [image, setImage] = useState(null)
+    const imageRef = React.createRef()
+    // let updateImg = (e) => {
+    //     if(e.target.files[0]) {
+    //         setImage(e.target.files[0])
+    //     }
+    // }
+    //
+    // const upload = () => {
+    //     if (image == null) {
+    //         return;
+    //     }
+    //     const imageref = storage.ref(`/image/${image.name}`).put(image)
+    //         .on('state_changed', alert('success'), alert)
+    //
+    //     imageref()
+    // }
+
+    11111
+
+                // const imageRef = ref(storage, 'image')
+                // uploadBytes(imageRef, image).then(() => {
+                //     getDownloadURL(imageRef).then((url) => {
+                //         setUrl(url);
+                //     }).catch((error) => {
+                //         console.log(error)
+                //     })
+                //     setImage(null)
+                // }).catch((error) => {console.log(error)})
+
+
+
+    import { initializeApp } from "firebase/app";
+    import { getStorage } from "firebase/storage";
+    import firebase from "firebase/compat/app"
+    import "firebase/compat/database";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyANVMlwzToBPWT8MyNtZX0f_gAnXxY6FWo",
+        authDomain: "newage-users-chykalova.firebaseapp.com",
+        projectId: "newage-users-chykalova",
+        storageBucket: "newage-users-chykalova.appspot.com",
+        messagingSenderId: "547667421944",
+        appId: "1:547667421944:web:f2cf4d7c0782738ce4290d",
+        measurementId: "G-T8Z0DBC1FJ"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const storage = getStorage(app)
+
+    export const dataref = firebase.database()
+    export default storage
+
+
+
+        // let bgColors = ['red', 'green', 'black', 'blue', 'orange']
+        // let bgColor = function (arr) {
+        //     let i = Math.floor(Math.random() * 5 + 1)
+        //     return arr[i]
+        // }
