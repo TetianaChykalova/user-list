@@ -24,21 +24,21 @@ function Add(props) {
     //                  /^(\+38|8)?0[0-9]{9}$/              /^(\+38)?0(39|50|63|66|67|68|73|89|9[1-9])[0-9]{7}$/
     //                  маскированній ввод
 
-    useEffect(() => {
-        if(firstNameValue&&lastNameValue&&telValue&&emailValue) {
-            setError(false)
-            console.log(error)
-        }
-    }, [firstNameValue, lastNameValue, telValue, emailValue])
+    let elem = document.activeElement
 
+    useEffect(() => {
+        console.log('render', error, elem)
+    })
 
     // ||!emailRGEX.test(emailValue)||!telRGEX.test(telValue)   &&emailValue&&telValue
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
         if(firstNameValue.length==0||lastNameValue.length==0) {
             setError(true)
-            console.log(error)
+            // console.log(error)
         }
     }
 
@@ -50,18 +50,17 @@ function Add(props) {
 
             props.users.addUser(uuid(), users)
             setUsers(prev => prev + 1)
+            console.log('submit')
 
             await props.data.registerUserToFirebase(props.users.state.usersCount[props.users.state.usersCount.length - 1])
 
             setError(false)
-            console.log(error)
 
-        } else {
             e.preventDefault()
-            setError(true)
-            console.log(error)
+
         }
     }
+
 
     return (
         <div>
@@ -73,7 +72,7 @@ function Add(props) {
                 <InputTel props={props.users} error={error} />
                 <InputEmail props={props.users} error={error} />
 
-                <button type='submit' onClick={addNewUser}>Add new user</button>
+                <button type='submit' onClick={ addNewUser }>Add new user</button>
             </form>
         </div>
     );
