@@ -8,6 +8,7 @@ let store = {
             tel: '',
             email: '',
             birthDay: null,
+            gender: '',
         },
     },
 
@@ -31,6 +32,10 @@ let store = {
         this.state.userData.birthDay = day
         this.callSubscriber(this.state)
     },
+    updateUserGender(gender) {
+        this.state.userData.gender = gender
+        this.callSubscriber(this.state)
+    },
 
     changeUserCount(count) {
         this.state.usersCount.push(count)
@@ -46,6 +51,7 @@ let store = {
             tel: this.state.userData.tel,
             email: this.state.userData.email,
             birthDay: this.state.userData.birthDay,
+            gender: this.state.userData.gender,
         }
 
         this.state.usersCount.push(newUser)
@@ -53,7 +59,8 @@ let store = {
         this.state.userData.lastName = ''
         this.state.userData.tel = ''
         this.state.userData.email = ''
-        this.state.userData.birthDay = null
+        this.state.userData.birthDay = ''
+        this.state.userData.gender = ''
         this.callSubscriber(this.state)
         console.log(this.state.usersCount)
     },

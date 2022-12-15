@@ -6,6 +6,7 @@ import InputTel from "./FormInputs/InputTel";
 import InputEmail from "./FormInputs/InputEmail";
 import InputLastName from "./FormInputs/InputLastName";
 import InputDate from "./FormInputs/InputDate";
+import InputGender from "./FormInputs/InputGender";
 
 
 function Form(props) {
@@ -68,6 +69,9 @@ function Form(props) {
                 </div>
                 <div>
                     <InputDate props={props.users} />
+                </div>
+                <div>
+                    <InputGender props={props.users}/>
                 </div>
 
                 <button type='submit' onClick={addNewUser}>Add new user</button>

@@ -12,14 +12,15 @@ function InputDate(props) {
 
     return (
         <div>
-            <p>
+            <label htmlFor="user-date">
                 Your birthday:
-            </p>
+            </label>
             <InputMask
                 mask='99.99.9999'
                 maskchair='_'
                 ref={dateRef}
                 onChange={dateChange}
+                id="user-date"
             />
         </div>
     );
