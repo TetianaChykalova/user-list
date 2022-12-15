@@ -1,5 +1,6 @@
 import React from 'react';
 import UserItem from "./UserItem";
+import UserFilter from "./UserFilter";
 
 function UsersList(props) {
     let item = props.count
@@ -10,6 +11,7 @@ function UsersList(props) {
 
     return (
         <div>
+            <UserFilter arr={item}/>
             {addNewUserItem}
         </div>
     );
