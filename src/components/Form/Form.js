@@ -7,6 +7,7 @@ import InputEmail from "./FormInputs/InputEmail";
 import InputLastName from "./FormInputs/InputLastName";
 import InputDate from "./FormInputs/InputDate";
 import s from './Form.module.css'
+import InputGender from "./FormInputs/InputGender";
 
 
 function Form(props) {
@@ -68,6 +69,7 @@ function Form(props) {
                 </div>
                 <div className={`${s.rows} ${s.div}`}>
                     <InputDate props={props.users} error={error} count={count}/>
+                    <InputGender props={props.users} count={count}/>
                 </div>
 
                 <button className={s.button} type='submit' onClick={addNewUser}>Add new user</button>

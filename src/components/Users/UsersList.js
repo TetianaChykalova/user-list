@@ -1,10 +1,21 @@
 import React, {useState} from 'react';
 import UserItem from "./UserItem";
 import s from './UserList.module.css'
+import Categories from "./Filter/Categories";
 
 function UsersList(props) {
     let item = props.count
     // console.log(item)
+
+    // filter
+    const [data, setData] = useState(Categories)
+
+    const filterResult = (item) => {
+        Categories.filter(getItem => {
+            return getItem.gender === item
+        })
+        setData(Categories)
+    }
 
     const[currentPage, setCurrentPage] = useState(1)
     const userPage = 4
@@ -28,8 +39,16 @@ function UsersList(props) {
 
     return (
         <div className={s.wrapper}>
+            <div>
+                <button onClick={() => setData(Categories)}>All</button>
+                <button onClick={() => filterResult('Mail')}>Male</button>
+                <button onClick={() => filterResult('Female')}>Female</button>
+            </div>
             <div className={s.list}>
                 {addNewUserItem}
+                {/*{data.map((value) => {*/}
+                {/*    const {id, gender} = value*/}
+                {/*})}*/}
             </div>
             <div className={s.pages}>
                 {pageButton}

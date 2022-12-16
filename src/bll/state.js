@@ -55,7 +55,7 @@ let store = {
         this.state.userData.tel = ''
         this.state.userData.email = ''
         this.state.userData.birthDay = null
-        this.state.userData.gender = ''
+        this.state.userData.gender = null
         this.callSubscriber(this.state)
         console.log(this.state.usersCount)
     },
