@@ -1,0 +1,33 @@
+
+
+    // filters
+    const gender = [
+        {
+            id: 1,
+            gender: 'Male',
+        },
+        {
+            id: 2,
+            gender: 'Female',
+        },
+    ]
+    const [filtered, setFiltered] = useState(gender)
+
+    let genderFilter = (genderInput) => {
+        if(genderInput === 'All') {
+            setFiltered(gender)
+        } else {
+            let newGender = [...gender].filter(item => item.gender === genderInput)
+            setFiltered(newGender)
+        }
+    }
+
+
+
+
+
+            <div>
+                <button onClick={() => {genderFilter('all')}}>All</button>
+                <button onClick={() => {genderFilter('Male')}}>Male</button>
+                <button onClick={() => {genderFilter('Female')}}>Female</button>
+            </div>
