@@ -1,0 +1,48 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 450px;
+}
+.list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.pages {
+    margin: 0 auto;
+}
+
+.userItem {
+    height: 300px;
+    width: 20%;
+    background: #fff;
+    border-radius: 15px;
+    border: 3px solid #000;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.userItem h4 {
+    text-align: center;
+    margin: 0 0 15px 0;
+}
+.userItem div {
+    margin: 0 0 10px 0;
+}
+.userItem div p {
+    margin: 0 0 5px 0;
+}
+.userItem div p span {
+    font-weight: 700;
+}
+
+.page {
+    padding: 7px 13px;
+    border-radius: 50%;
+    background: #000;
+    color: white;
+    font-weight: 900;
+    font-size: 22px;
+    margin: 0 10px 0 0;
+}
