@@ -1,7 +1,5 @@
 # User List
 
-The SpaceX app displays information about dragons.
-
 ## About app
 
 This app uses the following third-party libraries These dependencies are written in the package.json file
