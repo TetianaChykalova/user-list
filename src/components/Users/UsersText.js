@@ -1,10 +1,11 @@
 import React from 'react';
+import s from './UserText.module.css'
 
 function UsersText(props) {
     return (
-        <div>
-            <p>На жаль, ви не створили ще жодного користувача.</p>
-            <p>Натисніть кнопку вище</p>
+        <div className={s.wrapper}>
+            <p>Sorry, you haven't created any users yet...</p>
+            <p>Fill out the form above</p>
         </div>
     );
 }

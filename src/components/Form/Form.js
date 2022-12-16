@@ -6,7 +6,7 @@ import InputTel from "./FormInputs/InputTel";
 import InputEmail from "./FormInputs/InputEmail";
 import InputLastName from "./FormInputs/InputLastName";
 import InputDate from "./FormInputs/InputDate";
-import InputGender from "./FormInputs/InputGender";
+import s from './Form.module.css'
 
 
 function Form(props) {
@@ -57,24 +57,21 @@ function Form(props) {
 
 
     return (
-        <div>
+        <div className={s.wrapper}>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className={`${s.rows} ${s.div}`}>
                     <InputFirstName props={props.users} error={error}/>
                     <InputLastName props={props.users} error={error}/>
                 </div>
-                <div>
+                <div className={`${s.rows} ${s.div}`}>
                     <InputTel props={props.users} error={error} telResult={telResult}/>
                     <InputEmail props={props.users} error={error} emailResult={emailResult}/>
                 </div>
-                <div>
-                    <InputDate props={props.users} />
-                </div>
-                <div>
-                    <InputGender props={props.users}/>
+                <div className={`${s.rows} ${s.div}`}>
+                    <InputDate props={props.users} error={error}/>
                 </div>
 
-                <button type='submit' onClick={addNewUser}>Add new user</button>
+                <button className={s.button} type='submit' onClick={addNewUser}>Add new user</button>
             </form>
         </div>
     );

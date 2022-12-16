@@ -1,0 +1,20 @@
+.wrapper {}
+.label {
+    letter-spacing: 2px;
+}
+.input {
+    width: 70%;
+    height: 30px;
+    font-size: 20px;
+    border: black 1px solid;
+}
+.inputError {
+    width: 80%;
+    height: 30px;
+    font-size: 20px;
+    border: red 1px solid;
+}
+.errorMes {
+    color: red;
+    font-weight: 400;
+}

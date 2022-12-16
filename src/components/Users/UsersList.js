@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import UserItem from "./UserItem";
+import s from './UserList.module.css'
 
 function UsersList(props) {
     let item = props.count
     console.log(item)
 
     const[currentPage, setCurrentPage] = useState(1)
-    const[userPage, setUserPage] = useState(4)
+    const userPage = 4
 
     const lastPostIndex = currentPage * userPage
     const firstPostIndex = lastPostIndex - userPage
@@ -22,13 +23,17 @@ function UsersList(props) {
         pages.push(i)
     }
     let pageButton = pages.map((value, index) => {
-        return <button key={index} onClick={() => {setCurrentPage(value)}} >{value}</button>
+        return <button className={s.page} key={index} onClick={() => {setCurrentPage(value)}} >{value}</button>
     })
 
     return (
-        <div>
-            {addNewUserItem}
-            {pageButton}
+        <div className={s.wrapper}>
+            <div className={s.list}>
+                {addNewUserItem}
+            </div>
+            <div className={s.pages}>
+                {pageButton}
+            </div>
         </div>
     );
 }
