@@ -4,7 +4,7 @@ import s from './UserList.module.css'
 
 function UsersList(props) {
     let item = props.count
-    console.log(item)
+    // console.log(item)
 
     const[currentPage, setCurrentPage] = useState(1)
     const userPage = 4

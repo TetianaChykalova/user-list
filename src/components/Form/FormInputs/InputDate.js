@@ -1,18 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import InputMask from 'react-input-mask';
 import s from './FormInputs.module.css'
 
 function InputDate(props) {
-    // console.log(props)
 
     let dateRef = React.createRef()
     let dataItem = props.props.state.userData
-    console.log(dataItem)
 
     let dateChange = () => {
         let date = dateRef.current.value
         props.props.updateUserBirthDay(date)
     }
+
+    useEffect(() => {
+        dateRef.current.value = 'null'
+    }, [props.count.length])
 
     let classInput = props.error&&dataItem.birthDay==null ? s.inputError : s.input
 

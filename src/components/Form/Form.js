@@ -10,9 +10,8 @@ import s from './Form.module.css'
 
 
 function Form(props) {
-    // console.log(props)
 
-    // let count = props.users.state.usersCount
+    let count = props.users.state.usersCount
     const [users, setUsers] = useState(1)
     const [error, setError] = useState(false)
 
@@ -68,7 +67,7 @@ function Form(props) {
                     <InputEmail props={props.users} error={error} emailResult={emailResult}/>
                 </div>
                 <div className={`${s.rows} ${s.div}`}>
-                    <InputDate props={props.users} error={error}/>
+                    <InputDate props={props.users} error={error} count={count}/>
                 </div>
 
                 <button className={s.button} type='submit' onClick={addNewUser}>Add new user</button>
