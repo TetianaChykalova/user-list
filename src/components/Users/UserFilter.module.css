@@ -1,0 +1,9 @@
+.div {
+    display: flex;
+    align-items: flex-end;
+    margin: 0 0 50px 0;
+}
+.filterText {
+    margin-right: 60px;
+    letter-spacing: 2px;
+}

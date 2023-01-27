@@ -1,4 +1,5 @@
 import React from 'react';
+import s from './Filter.module.css'
 
 function FilterJob(props) {
 
@@ -9,8 +10,9 @@ function FilterJob(props) {
     }
 
     return (
-        <div>
+        <div className={s.filterInput}>
             <input
+                className={s.jobInput}
                 onChange={onChangeJobFilter}
                 type="text"
                 value={props.userJob}

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import UsersText from "./UsersText";
+import WithoutUsers from "./WithoutUsers";
 import UsersList from "./UsersList";
-
+import s from './UserFilter.module.css'
 import {Context} from "../../App";
 import {useContext} from "react";
 import FilterGender from "../Filter/FilterGender";
@@ -15,21 +15,27 @@ function Users(props) {
     const [userJobFilter, setUserJobFilter] = useState('')
 
 
-    if(store.state.usersCount.length > 0) {
-        return (
-            <div>
-                <FilterGender setUserGender={setUserGenderFilter}/>
-                <FilterJob userJob={userJobFilter} setUserJob={setUserJobFilter}/>
-                <UsersList count={store.state.usersCount} userGender={userGenderFilter} userJob={userJobFilter}/>
-            </div>
-        );
-    } else {
-        return (
-            <div>
-                <UsersText/>
-            </div>
-        );
-    }
+    return (
+       <>
+           {
+               store.state.usersCount.length > 0 ?
+                   <div>
+                       <div className={s.div}>
+                           <p className={s.filterText}>
+                               You can filter the results
+                           </p>
+                           <FilterGender setUserGender={setUserGenderFilter}/>
+                           <FilterJob userJob={userJobFilter} setUserJob={setUserJobFilter}/>
+                       </div>
+                       <UsersList count={store.state.usersCount} userGender={userGenderFilter} userJob={userJobFilter}/>
+                   </div>
+                   :
+                   <div>
+                       <WithoutUsers/>
+                   </div>
+           }
+       </>
+    )
 }
 
 export default Users;

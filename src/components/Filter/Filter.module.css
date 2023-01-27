@@ -1,0 +1,20 @@
+.filterInput {
+    margin-right: 30px;
+}
+.jobInput {
+    width: 200px;
+    height: 25px;
+    font-size: 20px;
+    border: black 1px solid;
+    border-radius: 5px;
+}
+.genderInput {
+    background: #7fb8ea;
+    height: 25px;
+    width: 70px;
+    padding: 0 3px;
+    border-radius: 5px;
+}
+.genderInput option {
+    background: #fff;
+}

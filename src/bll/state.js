@@ -8,7 +8,7 @@ let store = {
             tel: '',
             email: '',
             birthDay: null,
-            gender: '',
+            gender: 'Male',
             job: '',
         },
     },
@@ -61,7 +61,7 @@ let store = {
         this.state.userData.tel = ''
         this.state.userData.email = ''
         this.state.userData.birthDay = null
-        this.state.userData.gender = null
+        this.state.userData.gender = 'Male'
         this.state.userData.job = ''
         this.callSubscriber(this.state)
         console.log(this.state.usersCount)

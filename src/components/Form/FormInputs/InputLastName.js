@@ -12,7 +12,7 @@ function InputLastName(props) {
         store.updateUserLastName(name)
     }
 
-    let classInput = props.error&&dataItem.lastName.length==0 ? s.inputError : s.input
+    let classInput = props.error&&dataItem.lastName.length===0 ? s.inputError : s.input
 
     return (
         <div className='input'>
@@ -26,7 +26,7 @@ function InputLastName(props) {
                     value={dataItem.lastName}
                     onChange={nameChanged}
                 />
-                {props.error&&dataItem.lastName.length==0 ? <p className={s.errorMes}>This input can't be empty!</p> : ""}
+                {props.error&&dataItem.lastName.length===0 ? <p className={s.errorMes}>This input can't be empty!</p> : ""}
             </span>
         </div>
     );

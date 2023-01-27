@@ -19,15 +19,15 @@ function InputJob(props) {
         <div className='input'>
             <label className={s.label} htmlFor="user-first-name">User Job</label>
             <span>
-                    <input
-                        ref={jobRef}
-                        type="text"
-                        id="user-first-name"
-                        value={dataItem.job}
-                        onChange={refChanged}
-                    />
-                {props.error&&dataItem.firstName.length==0 ? <p className={s.errorMes}>This input can't be empty!</p> : ""}
-                </span>
+                <input
+                    className={s.input}
+                    ref={jobRef}
+                    type="text"
+                    id="user-first-name"
+                    value={dataItem.job}
+                    onChange={refChanged}
+                />
+            </span>
         </div>
     );
 }

@@ -15,11 +15,8 @@ import InputJob from "./FormInputs/InputJob";
 
 function Form(props) {
 
-
-
     const {store, data} = useContext(Context)
 
-    let count = store.state.usersCount
     const [users, setUsers] = useState(1)
     const [error, setError] = useState(false)
 
@@ -28,9 +25,13 @@ function Form(props) {
     const telValue = store.state.userData.tel
     const emailValue = store.state.userData.email
     const dateValue = store.state.userData.birthDay
+    const genderValue = store.state.userData.gender
 
     const emailRgex = /\S+@\S+\.\S+/
     const telRgex = /^(\+38)0(39|50|63|66|67|68|73|89|9[1-9])[0-9]{7}$/
+
+    const todayDate = new Date()
+    console.log(todayDate)
 
 
     const [telResult, setTelResult] = useState(true)
@@ -46,13 +47,13 @@ function Form(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (firstNameValue.length == 0 || lastNameValue.length == 0 || !telResult || !emailResult) {
+        if (firstNameValue.length === 0 || lastNameValue.length === 0 || !telResult || !emailResult) {
             setError(true)
         }
     }
 
     async function addNewUser(e) {
-        if (firstNameValue && lastNameValue && telValue && emailResult && dateValue) {
+        if (firstNameValue && lastNameValue && telValue && emailResult && dateValue && genderValue) {
 
             store.addUser(uuid(), users)
             setUsers(prev => prev + 1)
@@ -78,8 +79,8 @@ function Form(props) {
                     <InputDate error={error}/>
                     <InputJob/>
                 </div>
-                <div className={`${s.rows} ${s.div}`}>
-                    <InputGender/>
+                <div className={s.div}>
+                    <InputGender error={error} />
                 </div>
 
                 <button className={s.button} type='submit' onClick={addNewUser}>Add new user</button>

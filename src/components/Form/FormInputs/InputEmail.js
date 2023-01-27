@@ -13,7 +13,7 @@ function InputEmail(props) {
         store.updateUserEmail(email)
     }
 
-    let classInput = props.error&&dataItem.email.length==0||props.error&&dataItem.email.length>0&&!props.emailResult ? s.inputError : s.input
+    let classInput = props.error&&dataItem.email.length===0||props.error&&dataItem.email.length>0&&!props.emailResult ? s.inputError : s.input
 
     return (
         <div>
@@ -27,7 +27,7 @@ function InputEmail(props) {
                     value={dataItem.email}
                     onChange={emailChanged}
                 />
-                {props.error&&dataItem.email.length==0?<p className={s.errorMes}>This input can't be empty!</p>:""}
+                {props.error&&dataItem.email.length===0?<p className={s.errorMes}>This input can't be empty!</p>:""}
                 {props.error&&dataItem.email.length>0&&!props.emailResult?<p className={s.errorMes}>Email is invalid</p>:""}
             </span>
         </div>

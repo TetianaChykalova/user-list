@@ -14,7 +14,7 @@ function InputFirstName(props) {
         store.updateUserFirstName(name)
     }
 
-    let classInput = props.error&&dataItem.firstName.length==0 ? s.inputError : s.input
+    let classInput = props.error&&dataItem.firstName.length===0 ? s.inputError : s.input
 
     return (
             <div className='input'>
@@ -28,7 +28,7 @@ function InputFirstName(props) {
                         value={dataItem.firstName}
                         onChange={nameChanged}
                     />
-                    {props.error&&dataItem.firstName.length==0 ? <p className={s.errorMes}>This input can't be empty!</p> : ""}
+                    {props.error&&dataItem.firstName.length===0 ? <p className={s.errorMes}>This input can't be empty!</p> : ""}
                 </span>
             </div>
     );

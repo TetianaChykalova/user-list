@@ -1,8 +1,10 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 import s from './FormInputs.module.css'
 import {Context} from '../../../App'
 
 function InputGender(props) {
+    console.log(props.error)
+
     const {store} = useContext(Context)
 
     const onChangeValue = (e) => {
@@ -10,16 +12,25 @@ function InputGender(props) {
         store.updateUserGender(gender)
     }
 
-    // useEffect(() => {
-    // //     ОБНУЛЕНИЕ, еще не знаю как и какое
-    // }, [store.state.usersCount.length])
-
     return (
-        <div onChange={onChangeValue}>
-            <input type="radio" value="Male" name="gender" /> Male
-            <input type="radio" value="Female" name="gender" /> Female
-            <input type="radio" value="Another" name="gender" /> Another
-        </div>
+        <>
+            <div onChange={onChangeValue} className={s.inputGender}>
+                <div>
+                    <p className={s.label}>
+                        User gender
+                    </p>
+                </div>
+                <div>
+                    <input type="radio" value="Male" name="gender" defaultChecked /> Male
+                </div>
+                <div>
+                    <input type="radio" value="Female" name="gender" /> Female
+                </div>
+                <div>
+                    <input type="radio" value="Another" name="gender" /> Another
+                </div>
+            </div>
+        </>
     );
 }
 

@@ -19,3 +19,10 @@
     color: red;
     font-weight: 400;
 }
+
+.inputGender {
+    display: flex;
+}
+.inputGender div {
+    margin-right: 40px;
+}

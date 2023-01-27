@@ -13,7 +13,7 @@ function InputTel(props) {
         store.updateUserTel(tel)
     }
 
-    let classInput = props.error&&dataItem.tel.length==0||props.error&&dataItem.tel.length>0&&!props.telResult ? s.inputError : s.input
+    let classInput = props.error&&dataItem.tel.length===0||props.error&&dataItem.tel.length>0&&!props.telResult ? s.inputError : s.input
 
     return (
         <div>
@@ -27,7 +27,7 @@ function InputTel(props) {
                     value={dataItem.tel}
                     onChange={telChanged}
                 />
-                {props.error&&dataItem.tel.length==0?<p className={s.errorMes}>This input can't be empty!</p>:""}
+                {props.error&&dataItem.tel.length===0?<p className={s.errorMes}>This input can't be empty!</p>:""}
                 {props.error&&dataItem.tel.length>0&&!props.telResult?<p className={s.errorMes}>Tel is invalid</p>:""}
             </span>
         </div>
