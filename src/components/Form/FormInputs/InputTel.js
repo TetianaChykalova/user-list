@@ -1,15 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import s from './FormInputs.module.css'
+import {Context} from '../../../App'
 
 function InputTel(props) {
-    // console.log(props)
+    const {store} = useContext(Context)
 
     let telRef = React.createRef()
-    let dataItem = props.props.state.userData
+    let dataItem = store.state.userData
 
     let telChanged = () => {
         let tel = telRef.current.value
-        props.props.updateUserTel(tel)
+        store.updateUserTel(tel)
     }
 
     let classInput = props.error&&dataItem.tel.length==0||props.error&&dataItem.tel.length>0&&!props.telResult ? s.inputError : s.input

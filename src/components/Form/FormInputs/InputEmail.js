@@ -1,15 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import s from './FormInputs.module.css'
+import {Context} from '../../../App'
 
 function InputEmail(props) {
-    // console.log(props)
+    const {store} = useContext(Context)
 
     let emailRef = React.createRef()
-    let dataItem = props.props.state.userData
+    let dataItem = store.state.userData
 
     let emailChanged = () => {
         let email = emailRef.current.value
-        props.props.updateUserEmail(email)
+        store.updateUserEmail(email)
     }
 
     let classInput = props.error&&dataItem.email.length==0||props.error&&dataItem.email.length>0&&!props.emailResult ? s.inputError : s.input

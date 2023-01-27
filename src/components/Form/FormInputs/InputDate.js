@@ -1,20 +1,22 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useContext} from 'react';
 import InputMask from 'react-input-mask';
 import s from './FormInputs.module.css'
+import {Context} from '../../../App'
 
 function InputDate(props) {
+    const {store} = useContext(Context)
 
     let dateRef = React.createRef()
-    let dataItem = props.props.state.userData
+    let dataItem = store.state.userData
 
     let dateChange = () => {
         let date = dateRef.current.value
-        props.props.updateUserBirthDay(date)
+        store.updateUserBirthDay(date)
     }
 
     useEffect(() => {
         dateRef.current.value = 'null'
-    }, [props.count.length])
+    }, [store.state.usersCount.length])
 
     let classInput = props.error&&dataItem.birthDay==null ? s.inputError : s.input
 

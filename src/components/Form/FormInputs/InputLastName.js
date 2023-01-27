@@ -1,14 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import s from './FormInputs.module.css'
+import {Context} from '../../../App'
 
 function InputLastName(props) {
-    // console.log(props.error)
+    const {store} = useContext(Context)
     let lastNameRef = React.createRef()
-    let dataItem = props.props.state.userData
+    let dataItem = store.state.userData
 
     let nameChanged = () => {
         let name = lastNameRef.current.value
-        props.props.updateUserLastName(name)
+        store.updateUserLastName(name)
     }
 
     let classInput = props.error&&dataItem.lastName.length==0 ? s.inputError : s.input
