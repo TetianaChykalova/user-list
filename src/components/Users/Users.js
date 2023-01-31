@@ -22,7 +22,7 @@ function Users(props) {
                    <div>
                        <div className={s.div}>
                            <p className={s.filterText}>
-                               You can filter the results
+                               You can filter the results by gender and job
                            </p>
                            <FilterGender setUserGender={setUserGenderFilter}/>
                            <FilterJob userJob={userJobFilter} setUserJob={setUserJobFilter}/>
