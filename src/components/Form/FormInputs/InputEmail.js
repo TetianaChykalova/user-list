@@ -17,7 +17,7 @@ function InputEmail(props) {
 
     return (
         <div>
-            <label className={s.label} htmlFor="user-email">User Email</label>
+            <label className={s.label} htmlFor="user-email">User Email*</label>
             <span>
                 <input
                     className={classInput}

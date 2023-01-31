@@ -2,6 +2,10 @@
 .label {
     letter-spacing: 2px;
 }
+.label span {
+    letter-spacing: normal;
+    font-size: 12px;
+}
 .input {
     width: 70%;
     height: 30px;
@@ -22,7 +26,6 @@
 
 .inputGender {
     display: flex;
-}
-.inputGender div {
-    margin-right: 40px;
+    width: 70%;
+    justify-content: space-between;
 }

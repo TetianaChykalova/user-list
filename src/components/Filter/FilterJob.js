@@ -12,6 +12,7 @@ function FilterJob(props) {
     return (
         <div className={s.filterInput}>
             <input
+                placeholder='job filter'
                 className={s.jobInput}
                 onChange={onChangeJobFilter}
                 type="text"

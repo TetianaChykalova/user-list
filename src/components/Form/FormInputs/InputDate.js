@@ -15,33 +15,24 @@ function InputDate(props) {
     }
 
     useEffect(() => {
-        dateRef.current.value = 'null'
+        dateRef.current.value = ''
     }, [store.state.usersCount.length])
 
-    const d = '[0-3]'
-    const D = d === '3' ? '[0-1]' : '[1-9]'
-    const m = '[0-1]'
-    const M = m === '0' ? '[1-9]' : '[0-2]'
-    const y = '[1-2]'
-    const Y = '[0-9]'
-
     const formatCharsMask = {
-        'd': d,
-        'D': D,
-
-        'm': m,
-        'M': M,
-
-        'y': y,
-        'Y': Y,
+        'd': /[0-3]/,
+        'D': /[1-9]/,
+        'm': /[0-1]/,
+        'M': /[0-9]/,
+        'y': /[1-2]/,
+        'Y': /[0-9]/,
     }
 
-    let classInput = props.error&&dataItem.birthDay==null ? s.inputError : s.input
+    let classInput = props.error&&dataItem.birthDay.length===0 ? s.inputError : s.input
 
     return (
         <div>
             <label className={s.label} htmlFor="user-date">
-                User birthday
+                User birthday*
             </label>
             <span>
                 <InputMask
@@ -54,7 +45,7 @@ function InputDate(props) {
                     id="user-date"
                     placeholder='dd-mm-yyyy'
                 />
-                {props.error&&dataItem.birthDay==null ? <p className={s.errorMes}>This input can't be empty!</p> : ""}
+                {props.error&&dataItem.birthDay.length===0 ? <p className={s.errorMes}>This input can't be empty!</p> : ""}
             </span>
         </div>
     );

@@ -17,7 +17,7 @@ function InputTel(props) {
 
     return (
         <div>
-            <label className={s.label} htmlFor="user-tel">User Tel</label>
+            <label className={s.label} htmlFor="user-tel">User Tel*<br/><span>in format +38</span></label>
             <span>
                 <input
                     className={classInput}

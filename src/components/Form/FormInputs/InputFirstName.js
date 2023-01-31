@@ -18,7 +18,7 @@ function InputFirstName(props) {
 
     return (
             <div className='input'>
-                <label className={s.label} htmlFor="user-first-name">User Name</label>
+                <label className={s.label} htmlFor="user-first-name">User Name*</label>
                 <span>
                     <input
                         className={classInput}

@@ -3,7 +3,6 @@ import s from './FormInputs.module.css'
 import {Context} from '../../../App'
 
 function InputGender(props) {
-    console.log(props.error)
 
     const {store} = useContext(Context)
 
@@ -12,22 +11,26 @@ function InputGender(props) {
         store.updateUserGender(gender)
     }
 
+    const genderRef = React.useRef()
+
     return (
         <>
-            <div onChange={onChangeValue} className={s.inputGender}>
+            <div>
                 <div>
-                    <p className={s.label}>
-                        User gender
-                    </p>
+                    <label className={s.label}>
+                        User gender* <br/><span>"male" if you choose nothing</span>
+                    </label>
                 </div>
-                <div>
-                    <input type="radio" value="Male" name="gender" defaultChecked /> Male
-                </div>
-                <div>
-                    <input type="radio" value="Female" name="gender" /> Female
-                </div>
-                <div>
-                    <input type="radio" value="Another" name="gender" /> Another
+                <div onChange={onChangeValue} className={s.inputGender} ref={genderRef}>
+                    <div>
+                        <input type="radio" value="Male" name="gender" defaultChecked={true} /> Male
+                    </div>
+                    <div>
+                        <input type="radio" value="Female" name="gender" /> Female
+                    </div>
+                    <div>
+                        <input type="radio" value="Another" name="gender" /> Another
+                    </div>
                 </div>
             </div>
         </>
@@ -35,3 +38,5 @@ function InputGender(props) {
 }
 
 export default InputGender;
+
+

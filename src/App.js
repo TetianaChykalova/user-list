@@ -8,7 +8,6 @@ import './App.css'
 export const Context = React.createContext({})
 
 function App(props) {
-    console.log(props)
 
     return (
         <Context.Provider value={props}>
@@ -16,7 +15,7 @@ function App(props) {
 
                 <Header/>
                 <main>
-                    <Form users={props.store} data={props.data}/>
+                    <Form/>
                     <Users/>
                 </main>
 

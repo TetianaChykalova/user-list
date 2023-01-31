@@ -30,10 +30,6 @@ function Form(props) {
     const emailRgex = /\S+@\S+\.\S+/
     const telRgex = /^(\+38)0(39|50|63|66|67|68|73|89|9[1-9])[0-9]{7}$/
 
-    const todayDate = new Date()
-    console.log(todayDate)
-
-
     const [telResult, setTelResult] = useState(true)
     useEffect(() => {
         setTelResult(telRgex.test(telValue))
@@ -79,7 +75,7 @@ function Form(props) {
                     <InputDate error={error}/>
                     <InputJob/>
                 </div>
-                <div className={s.div}>
+                <div className={`${s.rows} ${s.div}`}>
                     <InputGender error={error} />
                 </div>
 

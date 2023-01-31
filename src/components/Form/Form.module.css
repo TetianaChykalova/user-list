@@ -7,9 +7,9 @@
     grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
-.rows div {
+.rows >div {
     display: grid;
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 190px 1fr;
 }
 .rows div:first-child {
     margin: 0 50px 0 0;

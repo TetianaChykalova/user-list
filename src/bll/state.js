@@ -7,7 +7,7 @@ let store = {
             lastName: '',
             tel: '',
             email: '',
-            birthDay: null,
+            birthDay: '',
             gender: 'Male',
             job: '',
         },
@@ -60,7 +60,7 @@ let store = {
         this.state.userData.lastName = ''
         this.state.userData.tel = ''
         this.state.userData.email = ''
-        this.state.userData.birthDay = null
+        this.state.userData.birthDay = ''
         this.state.userData.gender = 'Male'
         this.state.userData.job = ''
         this.callSubscriber(this.state)

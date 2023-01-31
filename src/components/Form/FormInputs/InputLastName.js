@@ -16,7 +16,7 @@ function InputLastName(props) {
 
     return (
         <div className='input'>
-            <label className={s.label} htmlFor="user-last-name">User Surname</label>
+            <label className={s.label} htmlFor="user-last-name">User Surname*</label>
             <span>
                 <input
                     className={classInput}

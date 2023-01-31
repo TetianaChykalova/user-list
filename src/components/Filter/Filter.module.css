@@ -7,13 +7,16 @@
     font-size: 20px;
     border: black 1px solid;
     border-radius: 5px;
+    padding: 0 5px;
 }
 .genderInput {
-    background: #7fb8ea;
+    background: rgb(255, 255, 0);
     height: 25px;
-    width: 70px;
+    width: 100px;
     padding: 0 3px;
     border-radius: 5px;
+    border: black 1px solid;
+    font-weight: 700;
 }
 .genderInput option {
     background: #fff;

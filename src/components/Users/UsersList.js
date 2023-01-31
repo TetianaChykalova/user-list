@@ -10,28 +10,23 @@ function UsersList(props) {
 
     const lastPostIndex = currentPage * userPage
     const firstPostIndex = lastPostIndex - userPage
-    const currentUser = item.slice(firstPostIndex, lastPostIndex)
+    // const currentUser = item.slice(firstPostIndex, lastPostIndex)
 
     let pages = []
     let addNewUserItem
 
     // AddUserItem
-    {
-        props.userGender === 'Male' || props.userGender === 'Female' ?
-            addNewUserItem = currentUser
-                .filter((person) => person.gender === props.userGender)
-                .filter((person) => person.job.toLowerCase().includes(props.userJob.toLowerCase()))
-                .map((user) => <UserItem props={user} key={user.id}/>)
-            :
-            addNewUserItem = currentUser
-                .filter((person) => person.job.toLowerCase().includes(props.userJob.toLowerCase()))
-                .map((user) => <UserItem props={user} key={user.id}/>)
-    }
-    // let addNewUserItem = currentUser
-    //     .filter((person) => person.gender === props.userGender)
-    //     .map( (user) =>  <UserItem props={user} key={user.id}/> )
-
-    console.log(addNewUserItem)
+    props.userGender === 'Male' || props.userGender === 'Female' ?
+        addNewUserItem = item
+            .filter((person) => person.gender === props.userGender)
+            .filter((person) => person.job.toLowerCase().includes(props.userJob.toLowerCase()))
+            .slice(firstPostIndex, lastPostIndex)
+            .map((user) => <UserItem props={user} key={user.id}/>)
+        :
+        addNewUserItem = item
+            .filter((person) => person.job.toLowerCase().includes(props.userJob.toLowerCase()))
+            .slice(firstPostIndex, lastPostIndex)
+            .map((user) => <UserItem props={user} key={user.id}/>)
 
     // Pagination
     for (let i = 1; i <= Math.ceil(item.length / userPage); i++) {
